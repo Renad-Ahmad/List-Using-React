@@ -1,0 +1,21 @@
+body {
+  border: rgb(255, 227, 17) 2px solid;
+  margin:0;
+}
+.item{
+  border: rgb(245, 18, 18) 2px solid;
+  margin: 4px;
+}
+.Comment{
+  border: rgb(105, 245, 18) 2px solid;
+  margin: 4px;
+}
+.all-manga{
+  border: rgb(0, 47, 255) 2px solid;
+  margin: 4px;
+}
+.my-List{
+  border: rgb(0, 217, 255) 2px solid;
+  margin: 4px;
+}
+
