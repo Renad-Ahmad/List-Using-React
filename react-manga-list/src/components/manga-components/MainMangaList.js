@@ -19,10 +19,12 @@ export default class MainMangaList extends React.Component{
       });
 
       return(
-        <div className="all-manga">
-          <h1>MANGA</h1>
+        <div>
+          <h1 class="display-1">MANGA</h1>
+        <div class="row">
           {allManga}
-        </div>          
+        </div>  
+        </div>        
       );
     }
 }

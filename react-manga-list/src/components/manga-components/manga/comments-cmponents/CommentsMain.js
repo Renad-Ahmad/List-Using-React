@@ -36,42 +36,40 @@ newArray.splice(index, 1)
 this.setState({commentItems:newArray})
   }
 
-  removeAllComment = (commentString) => {
+  // removeAllComment = (commentString) => {
+  //    const newArray=[...this.state.commentItems]
+  //    let index=newArray.indexOf(commentString)
     
-     const newArray=[...this.state.commentItems]
-     let index=newArray.indexOf(commentString)
-    
-    newArray.splice(index)
-    
-    this.setState({commentItems:newArray})
-      }
-
-  //  removeAllComment = (event) => {
-  //   //event.preventDefault();
-  //   let index = this.state.commentItems.indexOf(event);
-  //   if(index > -1){
-  //     this.setState({
-  //       commentItems: this.state.commentItems.splice(index,0),
-  //       newCommentItem: '',
-  //     });
+  //    newArray.splice(index)
+  //    this.setState({commentItems:newArray})
   //   }
-  // }
+
+   removeAllComment = (event) => {
+    //event.preventDefault();
+    let index = this.state.commentItems.indexOf(event);
+    if(index > -1){
+      this.setState({
+        commentItems: this.state.commentItems.splice(index,0),
+        newCommentItem: '',
+      });
+    }
+  }
 
   render(){
     
     return(
       <div className="Comment">
         <h4>Comments</h4>
-         <CommentList removeComment={this.removeComment} removeAllComment={this.removeAllComment.bind(this)} commentItems={this.state.commentItems}/>
+         <CommentList removeComment={this.removeComment}
+          removeAllComment={this.removeAllComment.bind(this)} 
+          commentItems={this.state.commentItems}/>
          {/* <CommentList removeAllComment={this.removeComment.bind(this)} commentItems={this.state.commentItems}/> */}
-
-        <hr /> 
         <form>
           <input type="text" placeholder="Add Comment"
               value={this.state.newCommentItem}
               onChange={this.onTextBoxChange}
            />
-          <button onClick={this.addComment}>Add New Comment</button>
+          <button type= "button" class="btn btn-outline-light btn btn-secondary" onClick={this.addComment}>Add New Comment</button>
         </form>
       </div>
     );

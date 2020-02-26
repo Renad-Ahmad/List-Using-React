@@ -15,10 +15,12 @@ export default class CommentList extends React.Component {
      }
     
     return (
+      <div class="row align-items-center">
       <ul>
         {/* <button onClick={this.removeComment("a")}>Delete</button>  */}
         {allItems}
       </ul>
+      </div>
     );
   }
 }

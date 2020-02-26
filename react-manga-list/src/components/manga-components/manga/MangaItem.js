@@ -6,13 +6,13 @@ export default class MangaItem extends React.Component{
 
   render(){
     return(
-      <div className="item">
-        <img src={this.props.mangaImage} alt="Image" />
+      <div class="row"class="col-6 col-sm-3">
+        <img class="rounded" src={this.props.mangaImage} alt="Image" />
 
         <div className="info">
           <h3>{this.props.mangaTitle}</h3>
           <p>Score: {this.props.mangaScore}</p>
-          <button onClick={()=>this.props.addFave(this.props.elment)}>Favorite</button>
+          <button  type= "button" class="btn btn-outline-light btn btn-secondary" onClick={()=>this.props.addFave(this.props.elment)}>Favorite</button>
           <Comments />
         </div>
       </div>
