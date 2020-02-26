@@ -2,22 +2,18 @@ import React from 'react';
 import CommentItime from './CommentItime';
 export default class CommentList extends React.Component {
 
-  removeComment = this.props.removeComment;
-  
   render() {
-    //console.log(this.props.removeComment)
-    // const allItems = this.props.commentItems.map(function(comment) {
-    //   return <CommentItime removeComment comment={comment}/>;
-    // });
      const allItems = [];
-     for(let i=1; i <= this.props.commentItems.length; i++){
-      allItems.push(<CommentItime removeComment={this.props.removeComment} removeAllComment={this.props.removeAllComment} comment={this.props.commentItems[i-1]}/>);
+     for(let i=0; i < this.props.commentItems.length; i++){
+      allItems.push(<CommentItime removeComment={this.props.removeComment} 
+        removeAllComment={this.props.removeAllComment} 
+        editComment={this.props.editComment}
+        comment={this.props.commentItems[i]}/>);
      }
     
     return (
       <div class="row align-items-center">
       <ul>
-        {/* <button onClick={this.removeComment("a")}>Delete</button>  */}
         {allItems}
       </ul>
       </div>

@@ -10,11 +10,7 @@ export default class MainMangaList extends React.Component{
           <MangaItem
             mangaImage={item.image_url}
             mangaTitle={item.title}
-            mangaScore={item.score}
-            // myMangaItems={this.props.includs(item)}
-            // addFave={()=>this.props.addFave(item)}
-            //newFaveLists={()=>this.props.newFaveLists()}
-          />
+            mangaScore={item.score}/>
         )
       });
 

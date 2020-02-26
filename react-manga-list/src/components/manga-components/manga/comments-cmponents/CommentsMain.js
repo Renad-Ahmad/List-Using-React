@@ -17,40 +17,40 @@ export default class Comments extends React.Component{
        newCommentItem: '',
      });
    }
-
+   
    onTextBoxChange = (event) => {
-    this.setState({
+     this.setState({
        newCommentItem: event.target.value
      });
    }
 
-   removeComment = (commentString) => {
-// index represnt the index we need to delete
-//  take a copy of the array we need to delete from
- const newArray=[...this.state.commentItems]
- let index=newArray.indexOf(commentString)
+   editComment=(comment,newComment)=>{
+      const newArray=[...this.state.commentItems]
+      let index=newArray.indexOf(comment)
+      newArray[index]=newComment;
 
-// use splice (inmdex start delete from , how many I need to delete)
-newArray.splice(index, 1)
-//put the new array in commititems setstate
-this.setState({commentItems:newArray})
+      this.setState({
+        commentItems:newArray
+      })
   }
 
-  // removeAllComment = (commentString) => {
-  //    const newArray=[...this.state.commentItems]
-  //    let index=newArray.indexOf(commentString)
-    
-  //    newArray.splice(index)
-  //    this.setState({commentItems:newArray})
-  //   }
+   removeComment = (commentString) => {
+      // index represnt the index we need to delete
+      // take a copy of the array we need to delete from
+      const newArray=[...this.state.commentItems]
+      let index=newArray.indexOf(commentString)
+      // use splice (inmdex start delete from , how many I need to delete)
+      newArray.splice(index, 1)
+      //put the new array in commititems setstate
+      this.setState({commentItems:newArray})
+  }
 
    removeAllComment = (event) => {
-    //event.preventDefault();
     let index = this.state.commentItems.indexOf(event);
     if(index > -1){
       this.setState({
         commentItems: this.state.commentItems.splice(index,0),
-        newCommentItem: '',
+        newCommentItem: ''
       });
     }
   }
@@ -61,15 +61,17 @@ this.setState({commentItems:newArray})
       <div className="Comment">
         <h4>Comments</h4>
          <CommentList removeComment={this.removeComment}
-          removeAllComment={this.removeAllComment.bind(this)} 
-          commentItems={this.state.commentItems}/>
-         {/* <CommentList removeAllComment={this.removeComment.bind(this)} commentItems={this.state.commentItems}/> */}
+                      removeAllComment={this.removeAllComment.bind(this)} 
+                      commentItems={this.state.commentItems}
+                      editComment={this.editComment}/>
         <form>
           <input type="text" placeholder="Add Comment"
               value={this.state.newCommentItem}
               onChange={this.onTextBoxChange}
            />
-          <button type= "button" class="btn btn-outline-light btn btn-secondary" onClick={this.addComment}>Add New Comment</button>
+          <button type= "button" class="btn btn-outline-light btn btn-secondary" 
+                  onClick={this.addComment}>Add New Comment
+          </button>
         </form>
       </div>
     );

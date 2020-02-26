@@ -1,7 +1,6 @@
 import React from 'react';
 import   './App.css';
 import axios from "axios";
-import Router from './Router';
 import MainMangaList from "./components/manga-components/MainMangaList";
 
 export default class App extends React.Component {
@@ -29,20 +28,10 @@ export default class App extends React.Component {
     });
 }
 
-// addFave=(elment)=>{
-//   const myListItems=[...this.state.myListItems];
-
-//   myListItems.push(elment)
-//   this.setState({myListItems})
-// }
-
   render(){
     return(
       <div>
-        <MainMangaList mangaItem={this.state.mangaItems} 
-        //myMangaItems={this.state.addFave}
-        // addFave={this.addFave}
-        /> 
+        <MainMangaList mangaItem={this.state.mangaItems}/> 
       </div>
     );
   }

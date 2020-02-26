@@ -1,68 +1,121 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ![GA Logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
-## Available Scripts
+# Mamga List
+---
+Is a game for two players, X and O, who take turns and the player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
+[Link To My Game](https://renad-ahmad.github.io/Tic-Tac-Toe-Game/)
 
-In the project directory, you can run:
 
-### `npm start`
+#### List of technologies
+---
+* draw.io
+Is free online diagram software for making flowcharts, process diagrams, org charts, UML, ER and network diagrams.
+* [Visual Studio Code](https://code.visualstudio.com/)
+Is a code editor redefined and optimized for building and debugging modern web and cloud applications. 
+* [Google Chrome](https://code.visualstudio.com/)
+web browser includes Developer Tools, a feature that helps web developers debug issues with HTML, CSS, and JavaScript.
+* HTML, CSS and JavaScript.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### The wireframe
+---
+[wireframe](https://drive.google.com/file/d/1NWOwjNM0GPJSi0xEqvbfEDv9xG3nthAw/view?usp=sharing)
+[](img/wireframes.png)
+### User Stories
+---
+*  As a user, I want to be able to start a new  game.
+*  As a user, I want to be able to click on a square to add X first and then O.
+*  As a user, I want to be shown an alert after each turn for win or tie.
+*  As a user, I want to be shown a message  for who's turn it is next.
+*  As a user, I want to be able to click the same square twice.
+*  As a user, I want to  be not able to continue playing once win or tie.
+*  As a user, I want to be  to play the game again without refreshing the page.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### Documentation
+---
+* In the first phase, I create all files I need for my Tic Tac Toe game.
+* In the second phase, I write the pseudocode for the Tic Tac Toe logic as comments in JavaScript file.
+* In the third phase, with HTML, JavaScript and jQuery created the page and the table for the Tic Tac Toe game.
+* In the fourth phase, style the page with CSS.
+* In the fifth phase, created a play function to switch turns between x and o.
+* In the sixth phase,  created a updateGameStatus function to check for win or tie and who's turn it is next. 
 
-### `npm test`
+#### List of unsolved problems
+---
+* A message to show who lose.
+* A counter to keep track of the win, lose and tie .
+* Make the site fully responsive so that it is playable from a mobile phone.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Descrintion of how i solved the win, lose and tie
+---
+- At first I created updateGameStatus function that has four ways to check for win and one check for tie.
+- The first one is a for loop that check for row sequence :
 
-### `npm run build`
+for (let i = 0; i < gameArray.length; i++) {
+        if (gameArray[i][0].status != "blank" &&
+            gameArray[i][0].status == gameArray[i][1].status &&
+            gameArray[i][0].status == gameArray[i][2].status) {
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+            isGameOver = true;
+            score = gameArray[i][0].status + " wins"
+            break;
+        }
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+    }
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. It will check if the status of the first square is not blank.
+2. Then check if what inside of the first square is the same as the second square.
+3. then check if what inside the first square is the same as the theird square.
+4. If all the three has the same status then it is a win.
 
-### `npm run eject`
+- Same go for the column sequence.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Diagonal sequence :
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+if (gameArray[0][0].status != "blank" &&
+        gameArray[0][0].status == gameArray[1][1].status &&
+        gameArray[0][0].status == gameArray[2][2].status) {
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+        isGameOver = true;
+        score = gameArray[0][0].status + " wins"
+    }
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Is the same but I use if statement and chose the index of the squares for the diagonal win.
 
-## Learn More
+- check for tie :
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ if (counter == 9 && score == null) {
+        isGameOver = true;
+        score = "tie";
+    }
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I set a counter in the play function and if the counter is equal 9 and the score is null then it is a tie .
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+#### Favorite function 
+---
+* play function :
 
-### Analyzing the Bundle Size
+const play = function (cellId) {
+    let i = cellId.substring(2, 3);
+    let j = cellId.substring(3, 4);
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+    if (gameArray[i][j].status == "blank" && !isGameOver) {
+        if (player1Turn) {
+            gameArray[i][j].status = "x"
+            document.getElementById(cellId).src = "img/x.png";
+            player1Turn = !player1Turn;
+        } else {
+            gameArray[i][j].status = "o"
+            document.getElementById(cellId).src = "img/o.png";
+            player1Turn = !player1Turn;
+        }
+        counter++;
+        updateGameStatus()
+    }
+}
+ 
+ 1. first it extract i and j.
+ 2. check if the status of the square is not blank and the game is not over (I set isGameOver = false, so if it is not false then do this condition).
+ 3. Then switch turns between x and o.
+ 4. Keep count for each turn.
+ 5. call updateGameStatus().
