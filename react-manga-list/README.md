@@ -12,7 +12,7 @@ Is a comics or graphic novels created in Japan.
 * draw.io
 * Visual Studio Code 
 * Google Chrome
-*React
+* React
 
 ### The Wireframe
 ---
