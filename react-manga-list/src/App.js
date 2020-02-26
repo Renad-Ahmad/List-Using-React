@@ -39,7 +39,6 @@ export default class App extends React.Component {
   render(){
     return(
       <div>
-        <Router/> 
         <MainMangaList mangaItem={this.state.mangaItems} 
         //myMangaItems={this.state.addFave}
         // addFave={this.addFave}
