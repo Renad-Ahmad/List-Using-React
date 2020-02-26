@@ -23,7 +23,7 @@ Is a comics or graphic novels created in Japan.
 ---
 *  As a user, I want to be able to see the cover of the manga.
 *  As a user, I want to be able to read the title of the manga.
-*  As a user, I want to be able to see the scor of the manga.
+*  As a user, I want to be able to see the score of the manga.
 *  As a user, I want to be able mark the manga as favorite.
 
 *  As a user, I want to be able add a new Comment.
