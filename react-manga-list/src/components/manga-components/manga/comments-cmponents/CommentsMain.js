@@ -24,17 +24,52 @@ export default class Comments extends React.Component{
      });
    }
 
+   removeComment = (commentString) => {
+// index represnt the index we need to delete
+//  take a copy of the array we need to delete from
+ const newArray=[...this.state.commentItems]
+ let index=newArray.indexOf(commentString)
+
+// use splice (inmdex start delete from , how many I need to delete)
+newArray.splice(index, 1)
+//put the new array in commititems setstate
+this.setState({commentItems:newArray})
+  }
+
+  removeAllComment = (commentString) => {
+    
+     const newArray=[...this.state.commentItems]
+     let index=newArray.indexOf(commentString)
+    
+    newArray.splice(index)
+    
+    this.setState({commentItems:newArray})
+      }
+
+  //  removeAllComment = (event) => {
+  //   //event.preventDefault();
+  //   let index = this.state.commentItems.indexOf(event);
+  //   if(index > -1){
+  //     this.setState({
+  //       commentItems: this.state.commentItems.splice(index,0),
+  //       newCommentItem: '',
+  //     });
+  //   }
+  // }
+
   render(){
     
     return(
       <div className="Comment">
         <h4>Comments</h4>
-         <CommentList commentItems={this.state.commentItems} />
+         <CommentList removeComment={this.removeComment} removeAllComment={this.removeAllComment.bind(this)} commentItems={this.state.commentItems}/>
+         {/* <CommentList removeAllComment={this.removeComment.bind(this)} commentItems={this.state.commentItems}/> */}
+
         <hr /> 
         <form>
           <input type="text" placeholder="Add Comment"
-                 value={this.state.newCommentItem}
-                 onChange={this.onTextBoxChange}
+              value={this.state.newCommentItem}
+              onChange={this.onTextBoxChange}
            />
           <button onClick={this.addComment}>Add New Comment</button>
         </form>

@@ -5,8 +5,10 @@ export default class CommentItime extends React.Component {
       <div className="myComment">
       <li>{this.props.comment}</li>
       <form>
-         <button type="submit">Delete</button>
-          <button type= "submit">Edit My Comment</button>
+          { <button type= "button" onClick={()=>this.props.removeComment(this.props.comment)}>Delete</button>}
+          {/* { <button type= "button" onClick={()=>this.props.removeComment(this.props.comment)}>Delete</button>} */}
+          <button type= "button" onClick={()=>this.props.removeAllComment(this.props.comment)}>Clear Comments</button>
+          <button type= "button">Edit</button>
       </form>
       </div>
     );
