@@ -16,7 +16,6 @@ Is a comics or graphic novels created in Japan.
 
 ### The Wireframe
 ---
-(https://drive.google.com/file/d/1cEH--pdn6Bx4JA5_iaw3llCVdg0n2Kvo/view?usp=sharing)
 [wireframe](https://drive.google.com/file/d/1cEH--pdn6Bx4JA5_iaw3llCVdg0n2Kvo/view?usp=sharing)
 
 
