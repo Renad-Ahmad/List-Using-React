@@ -13,6 +13,8 @@ Is a comics or graphic novels created in Japan.
 * Visual Studio Code 
 * Google Chrome
 * React
+* Bootstrap React
+* css
 ---
 ### The Wireframe
 ---
